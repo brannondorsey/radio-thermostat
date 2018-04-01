@@ -1,6 +1,6 @@
 # Radio Thermostat REST API
 
-![Radio thermostat image](.images/amazon.jpg)
+![Radio thermostat image](.images/amazon.png)
 
 The Radio Thermostat CT50 & CT80 (perhaps other models too) support a documented REST API to control heating/cooling in your house from your LAN. This is particularly interesting because there doesn't seem to be any authentication to access this API, leaving anyone on the network to have full control of the device. Daniel Crowly of Trustwave SpiderLabs [reported this vulnerability](https://web.archive.org/web/20180401193243/https://www.trustwave.com/Resources/Security-Advisories/Advisories/TWSL2013-022/?fid=3870) back in 2013, but the company doesn't seem to give a sh!t.
 
