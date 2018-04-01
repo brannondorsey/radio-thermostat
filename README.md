@@ -112,6 +112,34 @@ curl "${THERMOSTAT}/sys" -X GET
 curl "${THERMOSTAT}/sys/name" -X GET
 curl "${THERMOSTAT}/sys/name" -d '{"name": "hack the planet!"}' -X POST
 
+# get WiFi network information
+curl "${THERMOSTAT}/sys/network" -X GET
+
+# get supported modes and API endpoints on the system
+# httpd_handlers is contains key value pairs like "path" : [SUPPORTS_GET, SUPPORTS_POST]
+# "httpd_handlers":{
+#     "/tstat":[1,1],
+#     “/cloud”: [1,1],
+#     "/sys/network":[1,1],
+#     “/sys/updater":[0,1],
+#     "/sys/filesystem":[0,1],
+#     "/sys/firmware":[0,1],
+#     "/sys/fs-image":[0,1],
+#     "/sys/fw-image":[0,1],
+#     "/sys/command":[0,1],
+#     "/sys/services":[1,0],
+#     "/sys/mode":[1,1],
+#     "/sys/name":[1,1],
+#     “/sys/reboot”:[1,1],
+# }
+curl "${THERMOSTAT}/sys/system" -X GET
+
+# get live diagnostic stats
+curl "${THERMOSTAT}/sys/diag/stats/live" -X GET
+
+# get live diagnostic history
+curl "${THERMOSTAT}/sys/diag/stats/history" -X GET
+
 # reboot the device
 curl "${THERMOSTAT}/sys/command" -d '{"command": "reboot"}' -X POST
 ```
